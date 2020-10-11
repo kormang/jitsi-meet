@@ -2937,6 +2937,22 @@ export default {
     },
 
     /**
+     * Sends a message.
+     * @param {string} to the id of the participant that should receive the
+     * message. If "" - the message will be sent to all participants.
+     * @param {string} text the text of the message.
+     * @throws NetworkError or InvalidStateError or Error if the operation
+     * fails.
+     */
+    sendMessage(to, text) {
+        if (to) {
+            room.sendPrivateTextMessage(to, text);
+        } else {
+            room.sendTextMessage(text);
+        }
+    },
+
+    /**
      * Adds new listener.
      * @param {String} eventName the name of the event
      * @param {Function} listener the listener.

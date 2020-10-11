@@ -15,6 +15,7 @@ import {
 } from '../../react/features/base/conference';
 import { parseJWTFromURLParams } from '../../react/features/base/jwt';
 import { JitsiRecordingConstants } from '../../react/features/base/lib-jitsi-meet';
+import { sendMessage } from '../../react/features/chat/actions';
 import {
     processExternalDeviceRequest
 } from '../../react/features/device-selection/functions';
@@ -205,6 +206,12 @@ function initCommands() {
             } catch (err) {
                 logger.error('Failed sending endpoint text message', err);
             }
+        },
+        'send-chat-message': (text) => {
+            APP.store.dispatch(sendMessage(text));
+        },
+        'send-text-message': (to, text) => {
+            APP.conference.sendMessage(to, text);
         },
         'toggle-e2ee': enabled => {
             logger.debug('Toggle E2EE key command received');
