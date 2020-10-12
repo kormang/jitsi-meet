@@ -55,3 +55,13 @@ export const SET_PRIVATE_MESSAGE_RECIPIENT = 'SET_PRIVATE_MESSAGE_RECIPIENT';
  * }
  */
 export const TOGGLE_CHAT = 'TOGGLE_CHAT';
+
+/**
+ * The type of the action which signals to open the display of the chat panel.
+ * If it was already open, then it is no-op.
+ *
+ * {
+ *     type: OPEN_CHAT
+ * }
+ */
+export const OPEN_CHAT = 'OPEN_CHAT';

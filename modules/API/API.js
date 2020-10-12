@@ -213,6 +213,9 @@ function initCommands() {
         'send-text-message': (to, text) => {
             APP.conference.sendMessage(to, text);
         },
+        'open-chat': () => {
+            APP.UI.openChat();
+        },
         'toggle-e2ee': enabled => {
             logger.debug('Toggle E2EE key command received');
             APP.store.dispatch(toggleE2EE(enabled));

@@ -8,7 +8,7 @@ import Logger from 'jitsi-meet-logger';
 
 import { isMobileBrowser } from '../../react/features/base/environment/utils';
 import { getLocalParticipant } from '../../react/features/base/participants';
-import { toggleChat } from '../../react/features/chat';
+import { toggleChat, openChat } from '../../react/features/chat';
 import { setDocumentUrl } from '../../react/features/etherpad';
 import { setFilmstripVisible } from '../../react/features/filmstrip';
 import { joinLeaveNotificationsDisabled, setNotificationsEnabled } from '../../react/features/notifications';
@@ -309,6 +309,11 @@ UI.toggleFilmstrip = function() {
  * Toggles the visibility of the chat panel.
  */
 UI.toggleChat = () => APP.store.dispatch(toggleChat());
+
+/**
+ * Open the chat panel, if closed.
+ */
+UI.openChat = () => APP.store.dispatch(openChat());
 
 /**
  * Handle new user display name.

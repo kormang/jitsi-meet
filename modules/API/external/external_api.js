@@ -34,6 +34,7 @@ const commands = {
     toggleLobby: 'toggle-lobby',
     hangup: 'video-hangup',
     muteEveryone: 'mute-everyone',
+    openChat: 'open-chat',
     password: 'password',
     resizeLargeVideo: 'resize-large-video',
     sendChatMessage: 'send-chat-message',
